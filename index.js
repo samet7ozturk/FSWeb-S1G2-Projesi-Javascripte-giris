@@ -52,8 +52,10 @@ Aşağıdakileri yaparak carpma isimli fonksiyonu tamamla:
    3. console.log(carpma(7,4)) ile yazdığın fonsiyonu test edin. Console'da sonucu 28 olarak görmelisin.
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function carpma(a, b) {
+  let sonuc;
+  sonuc = a * b;
+  return sonuc;
 }
 
 /* Görev 2 : Köpeğin Yaşı */
@@ -65,8 +67,10 @@ Aşağıdakileri yap:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function kopeginYasi(c) {
+  let yasi;
+  yasi = c * 7;
+  return yasi;
 }
 
 /* Görev 3 */
@@ -83,18 +87,50 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yap.
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
 
-function oyun(oyuncu, bilgisayar) {
-  /*buraya kodunu yazabilirsin*/
-}
-
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
 /*
 Öncelikle aşağıdakileri yap:
-1. Bilgisayarın seçimini rastgele oluşturacağım bir fonksiyon tanımla. Örn: 
-   function bilgisayarinSecimi() {
-   
-   }
-2. Fonsiyonun içinde bilgisayarın seçimi için bir değişken tanımla
+1. Bilgisayarın seçimini rastgele oluşturacağım bir fonksiyon tanımla. Örn: */
+
+function bilgisayarinSecimi() {
+  let random;
+  let a;
+  random = Math.random() * 100;
+  if (random < 33) {
+    a = "Tas";
+  } else if (random >= 33 && random <= 66) {
+    a = "Kagit";
+  } else {
+    a = "Makas";
+  }
+  return a;
+}
+function oyun(oyuncu, bilgisayar) {
+  let sonuc;
+  if (oyuncu == "Taş" && bilgisayar == "Taş") {
+    sonuc = "Beraberlik";
+  } else if (oyuncu == "Kağıt" && bilgisayar == "Kağıt") {
+    sonuc = "Beraberlik";
+  } else if (oyuncu == "Makas" && bilgisayar == "Makas") {
+    sonuc = "Beraberlik";
+  } else if (oyuncu == "Kağıt" && bilgisayar == "Makas") {
+    sonuc = "Kaybettin!";
+  } else if (oyuncu == "Kağıt" && bilgisayar == "Taş") {
+    sonuc = "Kazandın!";
+  } else if (oyuncu == "Makas" && bilgisayar == "Taş") {
+    sonuc = "Kaybettin!";
+  } else if (oyuncu == "Taş" && bilgisayar == "Kağıt") {
+    sonuc = "Kaybettin!";
+  } else if (oyuncu == "Makas" && bilgisayar == "Kağıt") {
+    sonuc = "Kazandın!";
+  } else {
+    sonuc = "Kazandın!";
+  }
+  return sonuc;
+}
+console.log(oyun("Makas"), bilgisayarinSecimi());
+
+/*2. Fonsiyonun içinde bilgisayarın seçimi için bir değişken tanımla
 3. Math.random'ı kullanarak bilgisayarın seçimini oluşturun (Math.random 0-1 arasında bir değer verecek)
 4. Bu rastgele değeri "Taş", "Kağıt" veya "Makas"a dönüştüren bir koşul oluşturun
 5. Oluşan değeri geri dönün
@@ -113,8 +149,10 @@ Aşağdaki milDonusturucu fonksiyonunu aşağıdakileri kullanarak tamamla:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function milDonusturucu(e) {
+  let mil;
+  mil = e * 0.621371;
+  return mil;
 }
 
 //Görev 4b - Santimetreden Feet
@@ -127,8 +165,10 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yap:
 Google'da arama ipucu: "feet cm dönüştürme"
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function feetDonusturucu(b) {
+  let feet;
+  feet = b / 30.48;
+  return feet;
 }
 
 /* Görev 5 : 5 küçük maymun yatakta zıplamış şarkısını çocuklar için hazırladığımı varsayalım. https://www.youtube.com/watch?v=e4EJ34xnlxk */
